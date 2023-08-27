@@ -6,6 +6,9 @@ import { faker } from "@faker-js/faker";
 // import express.js
 import express from "express";
 
+//import express.js rateLimit
+import rateLimit from "express-rate-limit";
+
 // declare express.js
 const app = express();
 const port = 3000;
@@ -13,6 +16,20 @@ const port = 3000;
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
 });
+
+// using rateLimit
+const limiter = rateLimit({
+  windowMs: 15 * 60 * 1000, // 15 minutes
+  max: 50, // Limit each IP to 100 requests per `window` (here, per 15 minutes)
+  standardHeaders: true, // Return rate limit info in the `RateLimit-*` headers
+  legacyHeaders: false, // Disable the `X-RateLimit-*` headers
+  message:
+    "The api supports 50 requests per 15minutes, remove or tweak express-rate-limit for local testing",
+  // store: ... , // Use an external store for more precise rate limiting
+});
+
+// Apply the rate limiting middleware to all requests
+app.use(limiter);
 
 // GET route
 app.get("/api/users", (req, res) => {
