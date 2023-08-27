@@ -1,4 +1,4 @@
-Fake person data API
+REST API with Express and Faker.js to generate fake data
 
 ## Features
 
