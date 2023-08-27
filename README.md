@@ -1,4 +1,6 @@
-REST API with Express and Faker.js to generate fake user data including ID, UUID, Full name, email, phone number, location, address and job title for each user. 25 unique users generated per request. Features API rate limit of 50 requests per 15 minutes (configurable in app.js).
+REST API with Express and Faker.js to generate fake user data including ID, UUID, Full name, email, phone number, location, address and job title for each user. 25 unique users generated per request.
+
+- Features API rate limit of 50 requests per 15 minutes (configurable in app.js).
 
 ## Features
 
