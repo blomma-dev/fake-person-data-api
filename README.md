@@ -4,6 +4,8 @@ REST API with landing page, using Express and Faker.js to generate fake user dat
 
 ## Features
 
+See it live: https://fake-person-data-api.onrender.com/
+
 - REST API
 - landing page with link to API
 - Express server
