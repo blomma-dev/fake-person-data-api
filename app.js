@@ -8,6 +8,12 @@ import express from "express";
 
 //import express.js rateLimit
 import rateLimit from "express-rate-limit";
+import { fileURLToPath } from "url"; // Import the fileURLToPath function
+import path from "path";
+
+// Get the directory name using fileURLToPath
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 // declare express.js
 const app = express();
@@ -17,19 +23,21 @@ app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
 });
 
-// using rateLimit
-const limiter = rateLimit({
+const apiLimiter = rateLimit({
   windowMs: 15 * 60 * 1000, // 15 minutes
-  max: 50, // Limit each IP to 100 requests per `window` (here, per 15 minutes)
+  max: 100, // Limit each IP to 100 requests per `window` (here, per 15 minutes)
   standardHeaders: true, // Return rate limit info in the `RateLimit-*` headers
-  legacyHeaders: false, // Disable the `X-RateLimit-*` headers
+  legacyHeaders: false,
   message:
-    "The api supports 50 requests per 15minutes, remove or tweak express-rate-limit for local testing",
+    "API is limited to 100 calls per 15min. Please configure the API in app.js for development purposes or testing.", // Disable the `X-RateLimit-*` headers
   // store: ... , // Use an external store for more precise rate limiting
 });
 
-// Apply the rate limiting middleware to all requests
-app.use(limiter);
+// Apply the rate limiting middleware to API calls only
+app.use("/api", apiLimiter);
+
+// Serve static files from the "public" directory
+app.use(express.static(path.join(__dirname, "public")));
 
 // GET route
 app.get("/api/users", (req, res) => {

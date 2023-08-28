@@ -1,0 +1,89 @@
+/* Reset some default styles for a clean slate */
+body,
+h1,
+p,
+button {
+  margin: 0;
+  padding: 0;
+}
+
+/* Apply a sleek and modern font */
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #24292e 0%, #181d21 100%);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+  text-align: center;
+}
+
+.hero {
+  text-align: center;
+  max-width: 600px;
+}
+
+h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 14px;
+  margin-bottom: 30px;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  background-color: #007acc;
+  color: #fff;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 5px;
+  text-transform: uppercase;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+button:hover {
+  background-color: #00518b;
+  transform: scale(1.05);
+}
+
+/* ... (previous CSS rules) ... */
+
+/* ... (previous CSS rules) ... */
+
+/* Footer styles */
+footer {
+  background-color: #1b1e21; /* Dark background color for the footer */
+  text-align: center;
+  padding: 10px 0; /* Smaller padding */
+  position: absolute;
+  bottom: 0;
+  font-size: 12px;
+  width: 100%;
+}
+
+/* Style for the GitHub icon */
+.github-link {
+  text-decoration: none;
+  color: #fff; /* White text color for the link */
+  transition: color 0.3s ease;
+}
+
+.github-link i {
+  margin-right: 5px; /* Add some space between the icon and text */
+}
+
+.github-link:hover {
+  color: #007acc; /* Blue color on hover */
+}
