@@ -27,6 +27,11 @@ REST API with landing page, using Express and Faker.js to generate fake user dat
 - (optional) configure the number of users generated per request in app.js
 - (optional) configure the data using faker.js in app.js
 
+## Screenshots
+![apidata](https://github.com/blomma-dev/fake-person-data-api/assets/64746667/996fd1e2-fd2a-42d9-9ff8-fe974fa3edeb)
+
+![fakeapi](https://github.com/blomma-dev/fake-person-data-api/assets/64746667/bfd0eb77-8907-4898-8220-c9a44219b82e)
+
 ## License
 
 - MIT License
